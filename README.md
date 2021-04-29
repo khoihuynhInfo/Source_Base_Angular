@@ -14,3 +14,4 @@ Source Base For Angular
 
 -   NPM Package:
     +) To dowload and install NPM, plz see this link https://docs.npmjs.com/about-npm .
+    +) After install, to check that you have the npm client installed, run npm -v in a terminal window.
