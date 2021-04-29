@@ -16,10 +16,8 @@ export class AuthService {
 
   logout(): void {
     // logout the user
-    if(localStorage.getItem(_TOKEN)) {
-      localStorage.removeItem(_TOKEN);
-      location.reload();
-    }
+    localStorage.removeItem(_TOKEN);
+    location.reload();
   }
 
 }
