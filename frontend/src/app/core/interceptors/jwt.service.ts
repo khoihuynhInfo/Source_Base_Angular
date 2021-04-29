@@ -6,16 +6,13 @@ import { _TOKEN } from '../constants/const';
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
 
-  _token;
-
   constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    this._token = localStorage.getItem(_TOKEN) || null;
-    if (this._token) {
+    if (localStorage.getItem(_TOKEN)) {
       request = request.clone({
         setHeaders: {
-          Authorization: this._token
+          Authorization: localStorage.getItem(_TOKEN)
         }
       });
     }
