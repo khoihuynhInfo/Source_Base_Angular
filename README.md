@@ -4,6 +4,8 @@ Source Base For Angular
 
 ###### Author: Le cong LC
 
+###### Reference: https://angular.io/guide/setup-local
+
 ---
 
 # Setup:
@@ -24,9 +26,3 @@ Source Base For Angular
 -   **Upgrade Angular Core and CLI:** <br>
     (_Please make sure with this your action_) <br>
     +) For more information on upgrading Angular, please see this link https://update.angular.io/
-
-<br>
-<br>
-<br>
-
-###### Reference: https://angular.io/guide/setup-local
