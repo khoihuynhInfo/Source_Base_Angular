@@ -2,9 +2,9 @@
 
 Source Base For Angular
 
-###### Author: Le cong LC
+###### AUTHOR: Le cong LC
 
-###### Reference: https://angular.io/guide/setup-local
+###### REFERENCE: https://angular.io/guide/setup-local
 
 ---
 
