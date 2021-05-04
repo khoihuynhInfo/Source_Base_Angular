@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { DataService } from './http-service.service';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { _TOKEN } from '../constants/const';
+import { STORAGE } from '../constants/const';
 
 @Injectable({ providedIn: 'root' })
 
@@ -16,7 +16,7 @@ export class AuthService {
 
   logout(): void {
     // logout the user
-    localStorage.removeItem(_TOKEN);
+    localStorage.removeItem(STORAGE._TOKEN);
     location.reload();
   }
 

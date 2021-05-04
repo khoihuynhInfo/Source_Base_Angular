@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 
 import { Observable } from 'rxjs';
-import { ROUTE, _TOKEN } from '../constants/const';
+import { ROUTE, STORAGE } from '../constants/const';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
 
-    const token = localStorage.getItem(_TOKEN) || null;
+    const token = localStorage.getItem(STORAGE._TOKEN) || null;
     if (token) {
       return true;
     }

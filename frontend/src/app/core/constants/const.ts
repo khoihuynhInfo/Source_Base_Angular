@@ -3,4 +3,13 @@ export const ROUTE = {
   LOGIN: '/account/login'
 };
 export const API = {};
-export const _TOKEN = '';
+export const STORAGE = {
+  _TOKEN: '',
+  _PERMS: ''
+};
+export const PERMISSIONS = [
+  {
+    id: undefined,
+    text: ''
+  }
+]

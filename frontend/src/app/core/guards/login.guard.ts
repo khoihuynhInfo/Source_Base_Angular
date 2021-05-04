@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ROUTE, _TOKEN } from '../constants/const';
+import { ROUTE, STORAGE } from '../constants/const';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class LoginGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    const token = localStorage.getItem(_TOKEN) || null;
+    const token = localStorage.getItem(STORAGE._TOKEN) || null;
     if (token) {
       const returnUrl = next.queryParams.returnUrl || ROUTE.HOME;
       this.router.navigate([returnUrl]);
