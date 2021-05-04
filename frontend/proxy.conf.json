@@ -1,0 +1,8 @@
+[
+  {
+    "context": ["/w/**"],
+    "target": "",
+    "secure": false,
+    "logLevel" : "debug"
+  }
+]
