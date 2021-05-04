@@ -4,9 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 3000 --proxy-config proxy.conf.json --o",
-    "build-local": "ng build",
-    "build-uat": "ng build",
-    "build-prod": "ng build --prod",
+    "build-uat": "ng build --prod --base-href /{sub_folder_name}/{folder_name}/",
+    "build-prod": "ng build --prod --base-href /{folder_name}/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
