@@ -1,1 +1,45 @@
-<p>login works!</p>
+<div class="login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <!-- <a href="../../index2.html"><b>Admin</b>LTE</a> -->
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-header text-center logo-content">
+        LOGO
+        <!-- <img src="" alt="logo" class="logo"> -->
+      </div>
+      <div class="card-body login-card-body">
+        <p class="login-box-msg text-red">Sign in to start your session</p>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="user.userName"
+            (keyup.enter)="initLogin()">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Password" [(ngModel)]="user.password"
+            (keyup.enter)="initLogin()">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- /.col -->
+          <div class="col-12">
+            <button class="btn btn-block btn-primary" (click)="initLogin()">
+              <span>Sign In</span>
+            </button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+</div>

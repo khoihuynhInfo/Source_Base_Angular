@@ -28,11 +28,27 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/admin-lte/plugins/daterangepicker/daterangepicker.css",
+              "node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css",
+              "node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
+              "node_modules/admin-lte/plugins/select2/css/select2.min.css",
+              "node_modules/admin-lte/dist/css/adminlte.css",
+              "node_modules/admin-lte/plugins/summernote/summernote-bs4.css",
               "src/assets/scss/custom.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/admin-lte/plugins/jquery/jquery.js",
+              "node_modules/admin-lte/plugins/jquery-ui/jquery-ui.min.js",
+              "node_modules/admin-lte/plugins/moment/moment.min.js",
+              "node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.js",
+              "node_modules/admin-lte/plugins/select2/js/select2.full.min.js",
+              "node_modules/admin-lte/plugins/daterangepicker/daterangepicker.js",
+              "node_modules/admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js",
+              "node_modules/admin-lte/dist/js/adminlte.js",
+              "node_modules/admin-lte/plugins/summernote/summernote-bs4.min.js"
+            ]
           },
           "configurations": {
             "production": {

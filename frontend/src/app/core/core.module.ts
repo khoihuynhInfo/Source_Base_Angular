@@ -12,6 +12,7 @@ import { ErrorInterceptor } from './interceptors/error.service';
 import { JwtInterceptor } from './interceptors/jwt.service';
 import { LoaderInterceptorService } from './interceptors/loader.service';
 import { SuccessInterceptor } from './interceptors/success.service';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -25,7 +26,8 @@ import { SuccessInterceptor } from './interceptors/success.service';
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   exports: [
     FormsModule,

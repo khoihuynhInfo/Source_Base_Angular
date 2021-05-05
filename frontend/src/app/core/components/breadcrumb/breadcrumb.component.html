@@ -1,1 +1,20 @@
-<p>breadcrumb works!</p>
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-12">
+        <ol class="breadcrumb float-sm-left">
+          <li class="breadcrumb-item">
+            <a [routerLink]="homeURL">
+              <i class="fas fa-tachometer-alt mr-1"></i> Home
+            </a>
+          </li>
+          <li class="breadcrumb-item" *ngFor="let item of data; let i = index"
+            [ngClass]="i == data.length -1? 'active': ''">
+            <a *ngIf="!item.url || item.url == ''">{{item.name}}</a>
+            <a *ngIf="item.url && item.url != ''" [href]="item.url">{{item.name}}</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

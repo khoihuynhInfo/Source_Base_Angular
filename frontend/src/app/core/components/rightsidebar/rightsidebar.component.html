@@ -1,1 +1,49 @@
-<p>rightsidebar works!</p>
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a routerLink="/dashboard" class="brand-link text-center">
+    <img class="brand-text" src="" alt="logo" style="height: 25px; width: auto;">
+    <!-- <span class="brand-text font-weight-light">MEPLE</span> -->
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+        <ng-container *ngFor="let menu of menus">
+          <li class="nav-item" [ngClass]="menu.childs ? 'has-treeview' :''">
+            <a *ngIf="!menu.childs" [routerLink]="['/' + menu.route]" class="nav-link" [routerLinkActive]="['active']">
+              <i [ngClass]="menu.icon"></i>
+              <p>
+                {{menu.name}}
+              </p>
+            </a>
+            <a *ngIf="menu.childs" href="#" class="nav-link" [ngClass]="getClassActive(menu.childs) ? 'active' : ''">
+              <i [ngClass]="menu.icon"></i>
+              <p>
+                {{menu.name}}
+              </p>
+              <i class="right fas fa-angle-left"></i>
+            </a>
+            <ul class="nav nav-treeview child-items" *ngIf="menu.childs">
+              <ng-container *ngFor="let child of menu.childs">
+                <li class="nav-item">
+                  <a [routerLink]="['/' + child.route]" class="nav-link" [routerLinkActive]="['active']">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{{child.name}}</p>
+                  </a>
+                </li>
+              </ng-container>
+
+            </ul>
+          </li>
+        </ng-container>
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>
