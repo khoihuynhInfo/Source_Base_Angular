@@ -26,7 +26,7 @@ export class AuthService {
   }
 
   login(params): Observable<any> {
-    return this.dataService.post('/api/admin/login', params).pipe(
+    return this.dataService.post('', params).pipe(
       tap((res) => {
         console.log(res);
         this._setLoginLocalStogare(res);
