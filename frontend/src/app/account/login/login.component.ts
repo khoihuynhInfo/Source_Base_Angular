@@ -43,10 +43,13 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this._authService.login(this.user).subscribe(res => {
-      console.log(res);
-      this._router.navigate(['home']);
-    })
+    localStorage.setItem(STORAGE._TOKEN, 'JSON.stringify(apiRes.token)');
+    this._router.navigate(['home']);
+
+    // this._authService.login(this.user).subscribe(res => {
+    //   console.log(res);
+    //   this._router.navigate(['home']);
+    // })
   }
 
 }
