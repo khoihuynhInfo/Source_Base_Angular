@@ -1,8 +1,9 @@
 [
   {
-    "context": ["/w/**"],
+    "context": ["/api/**", "/w/**"],
     "target": "",
     "secure": false,
+    "changeOrigin": true,
     "logLevel" : "debug"
   }
 ]
