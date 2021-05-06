@@ -15,4 +15,29 @@ export class LoginComponent implements OnInit {
 
   }
 
+  initLogin() {
+    if(this.validateBeforLogin()) {
+      this.login();
+    }
+  }
+
+  validateBeforLogin() {
+    // if(!this.user.userName || this.user.userName == '') {
+    //   this._toastr.error('Please enter Username');
+    //   return false;
+    // }
+    // if(!this.user.password || this.user.password == '') {
+    //   this._toastr.error('Please enter Password');
+    //   return false;
+    // }
+    return true;
+  }
+
+  login() {
+    // this._authService.login(this.user).subscribe(res => {
+    //   console.log(res);
+    //   this._router.navigate(['home']);
+    // })
+  }
+
 }
