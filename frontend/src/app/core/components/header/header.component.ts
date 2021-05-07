@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ROUTE } from '../../constants/const';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,17 @@ import { ROUTE } from '../../constants/const';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private _router: Router) { }
+  account: any;
+
+  constructor(private _router: Router, private _authService: AuthService) { }
 
   ngOnInit(): void {
+    this._authService.currentUser$.subscribe(user => {
+      this.account = user || null;
+    })
   }
   logOut(){
-    localStorage.clear();
+    this._authService.logout();
     this._router.navigate([ROUTE.LOGIN])
   }
 

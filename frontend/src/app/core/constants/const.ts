@@ -4,8 +4,9 @@ export const ROUTE = {
 };
 export const API = {};
 export const STORAGE = {
-  _TOKEN: '',
-  _PERMS: ''
+  _TOKEN: '_token',
+  _PERMS: '_permissions',
+  _USER: '_currentUser'
 };
 export const PERMISSIONS = [
   {

@@ -9,10 +9,15 @@ import { STORAGE } from '../constants/const';
 export class AuthService {
 
   private _tokenSubject: BehaviorSubject<string> = new BehaviorSubject(null);
+  private _currentUserSubject: BehaviorSubject<object> = new BehaviorSubject(null);
 
   constructor(private dataService: DataService) {
+    if (localStorage.getItem(STORAGE._USER)) {
+      const userJson = JSON.parse(localStorage.getItem(STORAGE._USER));
+      this._currentUserSubject.next(userJson);
+    }
     if (localStorage.getItem(STORAGE._TOKEN)) {
-      const token = JSON.parse(localStorage.getItem(STORAGE._TOKEN));
+      const token = localStorage.getItem(STORAGE._TOKEN);
       this._tokenSubject.next(token);
     }
   }
@@ -25,26 +30,40 @@ export class AuthService {
     this._tokenSubject.next(token);
   }
 
+  get currentUser(): any {
+    return this._currentUserSubject.value;
+  }
+
+  set currentUser(user: any) {
+    user = user || null;
+    this._currentUserSubject.next(user);
+  }
+
+  get currentUser$(): Observable<any> {
+    return this._currentUserSubject.asObservable();
+  }
+
   login(params): Observable<any> {
     return this.dataService.post('', params).pipe(
       tap((res) => {
-        console.log(res);
         this._setLoginLocalStogare(res);
       }),
     );
   }
 
   logout(): void {
-    // logout the user
     localStorage.removeItem(STORAGE._TOKEN);
-    location.reload();
+    localStorage.removeItem(STORAGE._USER);
+    localStorage.removeItem(STORAGE._PERMS);
+    this._tokenSubject.next(null);
+    this._currentUserSubject.next(null);
   }
 
   _setLoginLocalStogare(apiRes: any): void {
-    console.log(apiRes);
-    localStorage.setItem(STORAGE._TOKEN, JSON.stringify(apiRes.token));
-    this._tokenSubject.next(apiRes.token);
+    localStorage.setItem(STORAGE._TOKEN, JSON.stringify(apiRes?.token));
+    localStorage.setItem(STORAGE._USER, JSON.stringify(apiRes?.user));
+    this._currentUserSubject.next(apiRes?.user)
+    this._tokenSubject.next(apiRes?.token);
   }
-
 }
 
