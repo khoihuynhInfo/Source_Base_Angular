@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTE } from '../../constants/const';
+import { MENU, ROUTE } from '../../constants/const';
 
 @Component({
   selector: 'app-rightsidebar',
@@ -8,32 +8,7 @@ import { ROUTE } from '../../constants/const';
 })
 export class RightsidebarComponent implements OnInit {
 
-  public menus: Array<any> = [
-    {
-      name: 'Home',
-      icon: 'nav-icon fas fa-tachometer-alt',
-      route: '',
-      perms: [],
-    },
-    {
-      name: 'Item 2',
-      icon: 'nav-icon fas fa-users',
-      perms: [],
-      childs: [
-        {
-          name: 'Sub Item 1',
-          route: '2',
-          perms: [],
-        }
-      ],
-    },
-    {
-      name: 'Item 3',
-      icon: 'nav-icon fas fa-tachometer-alt',
-      route: '3',
-      perms: [],
-    },
-  ];
+  public menus: Array<any> = [...MENU];
 
   constructor() { }
 
