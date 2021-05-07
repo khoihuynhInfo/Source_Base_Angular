@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { DataService } from './http-service.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { STORAGE } from '../constants/const';
+import { API, STORAGE } from '../constants/const';
 
 @Injectable({ providedIn: 'root' })
 
@@ -44,7 +44,7 @@ export class AuthService {
   }
 
   login(params): Observable<any> {
-    return this.dataService.post('', params).pipe(
+    return this.dataService.post(API.login, params).pipe(
       tap((res) => {
         this._setLoginLocalStogare(res);
       }),
