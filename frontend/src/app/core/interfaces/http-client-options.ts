@@ -4,7 +4,8 @@ export interface IHttpClientOptions {
   headers?: HttpHeaders | {
     [header: string]: string | string[];
   };
-  observe?: 'body';
+  observe?: any; // 'body' | 'events' | 'response'
+  responseType?: any; //| 'arraybuffer'|'blob'|'json'|'text'
   params?: HttpParams | {
     [param: string]: string | string[];
   };
